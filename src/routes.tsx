@@ -3,7 +3,7 @@ import { useRoutes } from 'react-router-dom';
 // Pages
 import Layout from './layout';
 import ContactInfo from './pages/ContactInfo';
-import Contacts from './pages/Contacts';
+import ContactsList from './pages/ContactsList';
 import ChatsList from './pages/ChatsList';
 import Chat from './pages/Chat';
 
@@ -19,7 +19,7 @@ const Router = () =>
       children: [
         { path: '/', element: <ChatsList /> },
 
-        { path: 'contacts', element: <Contacts /> },
+        { path: 'contacts', element: <ContactsList /> },
 
         { path: 'contacts/:contact_id', element: <ContactInfo /> },
         { path: 'contacts/:contact_id/chats', element: <Chat /> }
