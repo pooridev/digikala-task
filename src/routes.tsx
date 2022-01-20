@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 
 // Pages
-import Layout from './layouts/MainLayout';
+import Layout from './layout';
 import ContactInfo from './pages/ContactInfo';
 import Contacts from './pages/Contacts';
 import ChatsList from './pages/ChatsList';

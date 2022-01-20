@@ -1,0 +1,8 @@
+.main-layout {
+  display: flex;
+  height: 100%;
+  
+  & .main-content {
+    flex: 1;
+  }
+}

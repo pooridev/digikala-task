@@ -1,6 +1,9 @@
+// External dependencies
 import { FC } from 'react';
-
 import { Outlet } from 'react-router-dom';
+
+// Components
+import Sidebar from '../components/Layout/Sidebar';
 
 /**
  *
@@ -8,8 +11,11 @@ import { Outlet } from 'react-router-dom';
  */
 const Layout: FC = () => {
   return (
-    <div>
-      <Outlet />
+    <div className='main-layout'>
+      <Sidebar />
+      <main role='main' className='main-content'>
+        <Outlet />
+      </main>
     </div>
   );
 };

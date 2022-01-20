@@ -1,0 +1,40 @@
+.sidebar {
+  width: 6rem;
+  background: $black_500;
+  padding: 1rem;
+
+  &,
+  .sidebar-nav,
+  .sidebar-nav__ul {
+    height: 100%;
+  }
+
+  & .sidebar-item {
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+
+    svg {
+      color: $gray_200;
+    }
+
+    a {
+      color: $gray_200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      &.active {
+        background: $black_500;
+        color: $white;
+
+        svg {
+          color: $white;
+        }
+      }
+    }
+  }
+}
