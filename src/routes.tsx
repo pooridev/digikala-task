@@ -1,11 +1,12 @@
+import { lazy } from 'react';
 import { useRoutes } from 'react-router-dom';
 
 // Pages
-import Layout from './layout';
-import ContactInfo from './pages/ContactInfo';
-import ContactsList from './pages/ContactsList';
-import ChatsList from './pages/ChatsList';
-import Chat from './pages/Chat';
+const Layout = lazy(() => import('./layout'));
+const ContactInfo = lazy(() => import('./pages/ContactInfo'));
+const ContactsList = lazy(() => import('./pages/ContactsList'));
+const ChatsList = lazy(() => import('./pages/ChatsList'));
+const Chat = lazy(() => import('./pages/Chat'));
 
 /**
  *
