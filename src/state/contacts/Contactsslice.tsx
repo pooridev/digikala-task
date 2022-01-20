@@ -1,11 +1,15 @@
+// External dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Icon } from '@iconify/react';
 
+// Internal dependencies
 import { Message } from './../../types/state/slices/message';
 import { getUID } from './../../utils/getUID';
 import { Contact } from '../../types/state/slices/contact';
+
+// Assets
 import pooriaAvatar from '../../assets/images/avatars/pooria.jpg';
-import linuxAvatar from '../../assets/images/avatars/linux.jpg';
+import linuxAvatar from '../../assets/images/avatars/linus.jpg';
 
 const initialState: Contact[] = [
   {
