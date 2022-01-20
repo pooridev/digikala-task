@@ -11,7 +11,7 @@ import ListItem from './ListItem';
  */
 const List: FC<ListProp> = ({ items }) => {
   return (
-    <ul>
+    <ul className='list'>
       {items.map(item => (
         <ListItem key={item.id} item={item} />
       ))}

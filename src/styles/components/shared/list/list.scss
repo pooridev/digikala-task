@@ -1,0 +1,37 @@
+.list {
+  background: $black_500;
+  height: 100%;
+  width: 20rem;
+  list-style: none;
+
+  .list-item {
+    display: flex;
+    gap: 0.5rem;
+    color: $gray_50;
+    cursor: pointer;
+    padding: 0.7rem;
+
+    &:hover {
+      background: $black_400;
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4px 0;
+
+      &--name {
+        font-weight: 800;
+      }
+      &--number {
+        font-size: 0.9rem;
+      }
+    }
+
+    &__avatar img {
+      border-radius: 50%;
+      width: 50px;
+    }
+  }
+}

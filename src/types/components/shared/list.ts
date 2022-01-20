@@ -1,8 +1,8 @@
 export type ContactListItem = {
   name: string;
-  avatar: string;
   id: string;
-  type: 'contact' | 'contact';
+  avatar: string;
+  mobileNumber: string;
 };
 
 export type ChatListItem = {
@@ -16,9 +16,9 @@ export type ChatListItem = {
 };
 
 export type ListProp = {
-  items: Array<ChatListItem & ContactListItem>;
+  items: Array<ChatListItem | ContactListItem>;
 };
 
 export type ListItemProp = {
-  item: ChatListItem & ContactListItem;
+  item: ChatListItem | ContactListItem;
 };

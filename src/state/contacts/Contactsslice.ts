@@ -22,7 +22,7 @@ const initialState: Contact[] = [
 ];
 
 export const contactsSlice = createSlice({
-  name: 'counter',
+  name: 'contacts',
   initialState,
   reducers: {
     /**
