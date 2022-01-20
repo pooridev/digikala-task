@@ -1,5 +1,5 @@
 // External dependencies
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,11 +11,13 @@ import './styles/main.scss';
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-    </React.StrictMode>
+    <Suspense fallback={<div>Loading ...</div>}>
+      <React.StrictMode>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </React.StrictMode>
+    </Suspense>
   </Provider>,
   document.getElementById('root')
 );
