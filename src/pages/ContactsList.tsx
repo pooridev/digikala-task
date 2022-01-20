@@ -1,6 +1,7 @@
-// External
+// External dependencies
 import { useSelector } from 'react-redux';
 
+// Internal dependencies
 import List from '../components/shared/List/List';
 import { RootState } from '../types/state/rootState';
 

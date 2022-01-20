@@ -1,0 +1,13 @@
+.contact-info {
+  & {
+    @extend .contacts;
+  }
+
+  &__profile-wrapper {
+    @extend .contacts-background;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -11,7 +11,7 @@ import './styles/main.scss';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Suspense fallback={<div>Loading ...</div>}>
+    <Suspense fallback={<></>}>
       <React.StrictMode>
         <BrowserRouter>
           <Router />

@@ -1,0 +1,84 @@
+.profile-card {
+  min-width: 10rem;
+  width: 40rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  padding: 8rem 1rem;
+
+  &--clicked {
+    animation: jump 0.2s ease-in-out forwards;
+  }
+
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+
+    25% {
+      transform: translateY(5%);
+    }
+
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  &__avatar {
+    img {
+      object-fit: cover;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: $white;
+
+    &--name {
+      font-size: 3rem;
+      margin: 0.5rem auto;
+    }
+
+    &--job-title {
+      font-size: 1rem;
+    }
+  }
+
+  .social-list {
+    display: flex;
+    gap: 0.5rem;
+    margin: 2rem 0 0;
+    &__item {
+      a {
+        color: $white;
+      }
+    }
+  }
+  .footer {
+    margin: 2rem 0 0;
+
+    button {
+      border: 0;
+      cursor: pointer;
+      outline: 0;
+      background: $gray_500;
+      color: $white;
+      border-radius: 2px;
+      padding: 1rem 2rem;
+      transition: all 0.1s ease-in-out;
+
+      &:active {
+        transform: translateY(8%);
+      }
+    }
+  }
+}
