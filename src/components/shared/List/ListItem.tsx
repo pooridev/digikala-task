@@ -29,7 +29,7 @@ const ListItem: FC<ListItemProp> = ({ item }) => {
       <div className='list-item__details'>
         <div className='list-item__details--name'>{item.name}</div>
         <div className='list-item__details--number'>
-          {'lastMessage' in item ? item.lastMessage : item.mobileNumber}
+          {'lastMessage' in item ? item.lastMessage.message : item.mobileNumber}
         </div>
       </div>
     </li>

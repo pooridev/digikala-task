@@ -6,7 +6,10 @@ export type ContactListItem = {
 };
 
 export type ChatListItem = {
-  lastMessage: string;
+  lastMessage: {
+    message: string;
+    timestamp: number;
+  };
   name: string;
   avatar: string;
   date: string;

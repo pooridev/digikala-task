@@ -1,5 +1,5 @@
 .list {
-  background: $black_500;
+  background: $black_400;
   height: 100%;
   width: 20rem;
   list-style: none;
@@ -12,7 +12,7 @@
     padding: 0.7rem;
 
     &:hover {
-      background: $black_400;
+      background: $black_300;
     }
 
     &__details {
