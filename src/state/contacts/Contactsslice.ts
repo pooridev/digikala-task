@@ -10,14 +10,14 @@ const initialState: Contact[] = [
     id: 'linus-' + getUID(),
     messages: [],
     mobileNumber: '+49 123456789',
-    avatar: '/public/images/avatars/linux.jpg'
+    avatar: './assets/images/avatars/linux.jpg'
   },
   {
     name: 'Mehdi',
     id: 'mehdi-' + getUID(),
     messages: [],
     mobileNumber: '+98 123456789',
-    avatar: '/public/images/avatars/mehdi.jpg'
+    avatar: './assets/images/avatars/mehdi.jpg'
   }
 ];
 
