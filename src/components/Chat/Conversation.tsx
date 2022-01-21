@@ -37,7 +37,11 @@ const Conversation: FunctionComponent<ConversationProp> = ({ contact }) => {
     };
 
     dispatch(sendMessage(SEND_MESSAGE_PAYLOAD));
+    clearMessage();
   };
+
+  const clearMessage = () => setMessage('');
+
   return (
     <section className='conversation'>
       <Header contact={contact} />
