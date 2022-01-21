@@ -1,0 +1,37 @@
+.send-message-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: $black_400;
+  padding: 1rem;
+  border-left: 1px solid $black_500;
+  display: flex;
+  justify-content: space-between;
+  &__input {
+    width: 50%;
+    border: none;
+    background: transparent;
+    color: $gray_50;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0;
+    outline: none;
+
+    &::placeholder {
+      color: $gray_200;
+    }
+  }
+
+  .send-message-button {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: $gray_200;
+
+    &.valid {
+      color: $gray_50 !important;
+      cursor: pointer;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 
 import Header from './Header';
 import { ConversationProp } from '../../types/components/Chat/Conversation/conversation';
+import SendMessageForm from './SendMessageForm';
 
 /**
  *
@@ -11,6 +12,7 @@ const Conversation: FunctionComponent<ConversationProp> = ({ contact }) => {
   return (
     <section className='conversation'>
       <Header contact={contact} />
+      <SendMessageForm />
     </section>
   );
 };
