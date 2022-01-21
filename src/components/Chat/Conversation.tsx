@@ -1,3 +1,4 @@
+// External Dependencies
 import {
   ChangeEvent,
   FormEvent,
@@ -6,7 +7,9 @@ import {
   useState
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
+// Internal Dependencies
 import Header from './Header';
 import { ConversationProp } from '../../types/components/Chat/Conversation/conversation';
 import SendMessageForm from './SendMessageForm';
@@ -14,7 +17,6 @@ import { SendMessagePayload } from '../../types/state/payloads/send-message';
 import { getUID } from '../../utils/getUID';
 import { sendMessage, updateSeenMessage } from '../../state/slices/messages';
 import Messages from './Messages';
-import { useParams } from 'react-router-dom';
 import { RootState } from '../../types/state/rootState';
 
 /**

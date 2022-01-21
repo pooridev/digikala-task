@@ -11,11 +11,7 @@ import { RootState } from '../types/state/rootState';
 const ChatsLayout = () => {
   const contacts = useSelector((state: RootState) => state.contacts);
 
-  const { contact_id } = useParams<{ contact_id: string }>();
-
-  const contact = contacts.find(c => c.id === contact_id);
-
-  const chats = contacts.map(contact => ({
+  const chatsWithTimestamps = contacts.map(contact => ({
     lastMessage: {
       message: contact.messages
         .slice()
@@ -31,7 +27,7 @@ const ChatsLayout = () => {
     ...contact
   }));
 
-  const newestChats = chats
+  const newestChats = chatsWithTimestamps
     .slice()
     .sort((a, b) => b.lastMessage.timestamp - a.lastMessage.timestamp);
 
