@@ -1,5 +1,5 @@
 // External dependencies
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 // Components

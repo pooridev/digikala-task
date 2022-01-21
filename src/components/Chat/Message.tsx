@@ -1,5 +1,6 @@
 // External Dependencies
 import { FunctionComponent } from 'react';
+import Zoom from 'react-medium-image-zoom';
 
 // Internal Dependencies
 import { Message as MessageType } from '../../types/components/Chat/Conversation/message';
@@ -21,11 +22,13 @@ const Message: FunctionComponent<MessageType> = ({ message, ...other }) => {
 
   return (
     <li className='message'>
-      <img
-        className='message__avatar'
-        src={contact.avatar}
-        alt={contact.name + ' said:' + message.text}
-      />
+      <Zoom overlayBgColorEnd='#262930'>
+        <img
+          className='message__avatar'
+          src={contact.avatar}
+          alt={contact.name + ' said:' + message.text}
+        />
+      </Zoom>
       <div className='message__text-wrapper'>
         <MessageTail />
         <p className='message__text'>{message.text}</p>

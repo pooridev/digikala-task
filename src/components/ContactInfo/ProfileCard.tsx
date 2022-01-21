@@ -1,6 +1,7 @@
 // External dependencies
 import { FunctionComponent, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Zoom from 'react-medium-image-zoom';
 
 // Internal dependencies
 import { ProfileCardProp } from '../../types/components/ContactInfo/profile-card';
@@ -25,9 +26,11 @@ const ProfileCard: FunctionComponent<ProfileCardProp> = props => {
 
   return (
     <div ref={profileCardRef} className='profile-card'>
-      <figure role='img' className='profile-card__avatar'>
-        <img src={avatar} width='100' />
-      </figure>
+      <Zoom overlayBgColorEnd='#262930'>
+        <figure role='img' className='profile-card__avatar'>
+          <img src={avatar} width='100' />
+        </figure>
+      </Zoom>
       <div className='profile-card__info'>
         <h5 className='profile-card__info--name'>{name}</h5>
         <span className='profile-card__info--job-title'>{jobTitle}</span>
