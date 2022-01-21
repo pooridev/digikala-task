@@ -10,6 +10,7 @@ export type ChatListItem = {
     message: string;
     timestamp: number;
   };
+  unreadCounts: number;
   name: string;
   avatar: string;
   date: string;

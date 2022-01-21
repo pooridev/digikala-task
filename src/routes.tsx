@@ -19,11 +19,10 @@ const Router = () =>
       element: <Layout />,
       children: [
         { path: '/', element: <ChatsList /> },
+        { path: '/:contact_id/chats', element: <Chat /> },
 
         { path: 'contacts', element: <ContactsList /> },
-
-        { path: 'contacts/:contact_id', element: <ContactInfo /> },
-        { path: 'contacts/:contact_id/chats', element: <Chat /> }
+        { path: 'contacts/:contact_id', element: <ContactInfo /> }
       ]
     }
   ]);

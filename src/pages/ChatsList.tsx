@@ -18,6 +18,7 @@ const ChatsList = () => {
         .slice()
         .sort((a, b) => b.timestamp - a.timestamp)[0].timestamp
     },
+    unreadCounts: contact.messages.filter(message => !message.hasSeen).length,
     type: 'chat',
     ...contact
   }));

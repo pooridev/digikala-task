@@ -9,7 +9,7 @@ const ListItem: FC<ListItemProp> = ({ item }) => {
   const navigate = useNavigate();
 
   const goToChat = () => {
-    navigate(`/contacts/${item.id}/chats`);
+    navigate(`/${item.id}/chats`);
   };
 
   const goToContactInfo = () => {
@@ -32,6 +32,9 @@ const ListItem: FC<ListItemProp> = ({ item }) => {
           {'lastMessage' in item ? item.lastMessage.message : item.mobileNumber}
         </div>
       </div>
+      {'lastMessage' in item && item.unreadCounts >= 1 && (
+        <div className='list-item__unread'>{item.unreadCounts}</div>
+      )}
     </li>
   );
 };

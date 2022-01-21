@@ -19,7 +19,7 @@ const ProfileCard: FunctionComponent<ProfileCardProp> = props => {
     clearTimeout(timerId);
 
     timerId = setTimeout(() => {
-      navigate(`/contacts/${id}/chats`);
+      navigate(`/${id}/chats`);
     }, 400);
   };
 

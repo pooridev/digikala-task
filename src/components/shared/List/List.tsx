@@ -1,8 +1,10 @@
 // External dependencies
 import { FC } from 'react';
+import { useSelector } from 'react-redux';
 
 // Internal dependencies
 import { ListProp } from '../../../types/components/shared/list';
+import { RootState } from '../../../types/state/rootState';
 import ListItem from './ListItem';
 
 /**
