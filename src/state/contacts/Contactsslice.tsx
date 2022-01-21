@@ -1,11 +1,9 @@
 // External dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Icon } from '@iconify/react';
 
 // Internal dependencies
-import { Message } from './../../types/state/slices/message';
 import { initialState } from '../../constants/contacts-initialstate.';
-import { AddMessagePayload } from '../../types/state/payloads/add-message';
+import { SendMessagePayload } from '../../types/state/payloads/send-message';
 import { UpdateSeenMessagePayload } from '../../types/state/payloads/update-seen-message';
 
 export const contactsSlice = createSlice({
@@ -15,10 +13,14 @@ export const contactsSlice = createSlice({
     /**
      * Send a message to a contact
      */
-    sendMessage: (state, action: PayloadAction<AddMessagePayload>) => {
-      const { id } = action.payload;
-      const contact = state.find(contact => contact.id === id);
-      contact?.messages.push(action.payload);
+    sendMessage: (state, action: PayloadAction<SendMessagePayload>) => {
+      const { contact_id } = action.payload;
+      state = state.map(contact => {
+        if (contact.id === contact_id) {
+          contact.messages.push(action.payload);
+        }
+        return contact;
+      });
     },
     /**
      * Update messages as seen
@@ -27,7 +29,7 @@ export const contactsSlice = createSlice({
       state,
       action: PayloadAction<UpdateSeenMessagePayload>
     ) => {
-     // debugger
+      // debugger
       const { contact_id } = action.payload;
       state = state.map(contact => {
         if (contact.id === contact_id) {

@@ -1,28 +1,21 @@
+// External Dependencies
+import { FormEvent, FunctionComponent, useState } from 'react';
 import { Icon } from '@iconify/react';
-import { FormEvent, useState } from 'react';
 
-const SendMessageForm = () => {
-  const [message, setMessage] = useState('');
+// Internal Dependencies
+import { SendMessageFormProps } from '../../types/components/Chat/Conversation/send-message-form';
 
-  const changeMessageInputHandler = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setMessage(e.target.value);
-  };
-
-  const sendMessageHandler = (e: FormEvent) => {
-    e.preventDefault();
-  };
-
+const SendMessageForm: FunctionComponent<SendMessageFormProps> = ({
+  onSendMessage,
+  message,
+  onChangeInput
+}) => {
   return (
-    <form
-      onSubmit={sendMessageHandler}
-      role='form'
-      className='send-message-form'>
+    <form onSubmit={onSendMessage} role='form' className='send-message-form'>
       <input
         aria-invalid={message.trim().length === 0}
         value={message}
-        onChange={changeMessageInputHandler}
+        onChange={onChangeInput}
         className='send-message-form__input'
         type='text'
         placeholder='Write a message...'
