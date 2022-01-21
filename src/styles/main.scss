@@ -3,13 +3,24 @@
 // Layout
 @import './layout/index.scss';
 
-// Components
+/*
+  ----------- Components -----------
+  -----------            -----------
+*/
+
+// shared components
 @import './components/shared/sidebar/sidebar.scss';
 @import './components/shared/list/list.scss';
+
+// page components
 @import './components/ContactInfo/profile-card.scss';
 @import './components/Chat/conversation.scss';
+@import './components/Chat/header.scss';
 
-// Pages
+/*
+  ----------- Pages -----------
+  -----------       -----------
+*/
 @import './pages/contacts.scss';
 @import './pages/contact-info.scss';
 @import './pages/chats.scss';

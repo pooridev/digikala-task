@@ -14,6 +14,7 @@ const Chat = () => {
   const contacts = useSelector((state: RootState) => state.contacts);
 
   const { contact_id } = useParams<{ contact_id: string }>();
+  const contact = contacts.find(c => c.id === contact_id);
   const dispatch = useDispatch();
 
   // add properties unreadCounts, message & timestamp
@@ -46,7 +47,7 @@ const Chat = () => {
   return (
     <div className='chats'>
       <List items={newestContactsChats} />
-      <Conversation />
+      <Conversation contact={contact!} />
     </div>
   );
 };
