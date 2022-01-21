@@ -1,4 +1,4 @@
-import { FormEvent, FunctionComponent, useState } from 'react';
+import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Header from './Header';
@@ -6,7 +6,7 @@ import { ConversationProp } from '../../types/components/Chat/Conversation/conve
 import SendMessageForm from './SendMessageForm';
 import { SendMessagePayload } from '../../types/state/payloads/send-message';
 import { getUID } from '../../utils/getUID';
-import { sendMessage } from '../../state/contacts/Contactsslice';
+import { sendMessage } from '../../state/slices/messages';
 import Messages from './Messages';
 
 /**
@@ -17,9 +17,7 @@ const Conversation: FunctionComponent<ConversationProp> = ({ contact }) => {
   const [message, setMessage] = useState('');
   const dispatch = useDispatch();
 
-  const changeMessageInputHandler = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const changeMessageInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
   };
 

@@ -2,12 +2,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 // Internal dependencies
-import { initialState } from '../../constants/contacts-initialstate.';
-import { SendMessagePayload } from '../../types/state/payloads/send-message';
-import { UpdateSeenMessagePayload } from '../../types/state/payloads/update-seen-message';
+import { initialState } from '../../../constants/contacts-initialstate.';
+import { SendMessagePayload } from '../../../types/state/payloads/send-message';
+import { UpdateSeenMessagePayload } from '../../../types/state/payloads/update-seen-message';
 
-export const contactsSlice = createSlice({
-  name: 'contacts',
+export const messageSlice = createSlice({
+  name: 'message',
   initialState,
   reducers: {
     /**
@@ -44,6 +44,6 @@ export const contactsSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { sendMessage, updateSeenMessage } = contactsSlice.actions;
+export const { sendMessage, updateSeenMessage } = messageSlice.actions;
 
-export default contactsSlice.reducer;
+export default messageSlice.reducer;

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Conversation from '../components/Chat/Conversation';
 import List from '../components/shared/List';
-import { updateSeenMessage } from '../state/contacts/Contactsslice';
+import { updateSeenMessage } from '../state/slices/messages';
 import { RootState } from '../types/state/rootState';
 
 /**
