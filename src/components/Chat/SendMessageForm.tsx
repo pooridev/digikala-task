@@ -10,10 +10,12 @@ const SendMessageForm: FunctionComponent<SendMessageFormProps> = ({
   message,
   onChangeInput
 }) => {
+  const isValid = message.trim().length >= 1;
+
   return (
     <form onSubmit={onSendMessage} role='form' className='send-message-form'>
       <input
-        aria-invalid={message.trim().length === 0}
+        aria-invalid={!isValid}
         value={message}
         onChange={onChangeInput}
         className='send-message-form__input'
@@ -23,9 +25,7 @@ const SendMessageForm: FunctionComponent<SendMessageFormProps> = ({
       <button
         type='submit'
         className={
-          message.trim().length === 0
-            ? 'send-message-button'
-            : 'send-message-button valid'
+          isValid ? 'send-message-button valid' : 'send-message-button'
         }>
         <Icon fontSize='2rem' icon='carbon:send-filled' />
       </button>
