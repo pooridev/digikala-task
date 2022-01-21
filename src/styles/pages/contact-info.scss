@@ -4,8 +4,7 @@
   }
 
   &__profile-wrapper {
-    @extend .contacts-background;
-
+    @extend .background-image;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,5 +1,6 @@
 // External dependencies
 import { useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
 
 // Internal dependencies
 import List from '../components/shared/List';
@@ -10,7 +11,7 @@ const Contacts = () => {
   return (
     <div className='contacts'>
       <List items={contacts} />
-      <div role='presentation' className='contacts-background' />
+      <Outlet />
     </div>
   );
 };

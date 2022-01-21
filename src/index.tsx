@@ -10,13 +10,16 @@ import { store } from './state/store';
 
 import './styles/main.scss';
 import 'react-medium-image-zoom/dist/styles.css';
+import MainLayout from './layouts/MainLayout';
 
 ReactDOM.render(
   <Provider store={store}>
     <Suspense fallback={<></>}>
       <React.StrictMode>
         <BrowserRouter>
-          <Router />
+          <MainLayout>
+            <Router />
+          </MainLayout>
         </BrowserRouter>
       </React.StrictMode>
     </Suspense>

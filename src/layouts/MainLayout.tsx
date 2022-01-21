@@ -1,5 +1,5 @@
 // External dependencies
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
 // Components
@@ -9,15 +9,15 @@ import Sidebar from '../components/shared/Sidebar';
  *
  * @returns a layout containing a sidebar (for navigation stuff) and the main content
  */
-const Layout: FC = () => {
+const MainLayout: FC = ({ children }) => {
   return (
     <div className='main-layout'>
       <Sidebar />
       <main role='main' className='main-content'>
-        <Outlet />
+        {children}
       </main>
     </div>
   );
 };
 
-export default Layout;
+export default MainLayout;

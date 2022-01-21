@@ -1,24 +1,21 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Outlet, Route, Routes, useParams } from 'react-router-dom';
 import Conversation from '../components/Chat/Conversation';
 import List from '../components/shared/List';
-import { updateSeenMessage } from '../state/slices/messages';
 import { RootState } from '../types/state/rootState';
 
 /**
  *
- * @returns a page containing the messages of a chat 📱
+ * @returns a page containing a list of selectable chats 📩
  */
-const Chat = () => {
+const ChatsLayout = () => {
   const contacts = useSelector((state: RootState) => state.contacts);
 
   const { contact_id } = useParams<{ contact_id: string }>();
-  const contact = contacts.find(c => c.id === contact_id);
-  const dispatch = useDispatch();
 
-  // add properties unreadCounts, message & timestamp
-  const chats = contacts.slice().map(contact => ({
+  const contact = contacts.find(c => c.id === contact_id);
+
+  const chats = contacts.map(contact => ({
     lastMessage: {
       message: contact.messages
         .slice()
@@ -34,24 +31,16 @@ const Chat = () => {
     ...contact
   }));
 
-  // sort chats by last message
   const newestChats = chats
     .slice()
     .sort((a, b) => b.lastMessage.timestamp - a.lastMessage.timestamp);
 
-  // Update messages as seen when the page is loaded
-  useEffect(() => {
-    if (contact_id) {
-      dispatch(updateSeenMessage({ contact_id }));
-    }
-  }, [contact_id]);
-
   return (
     <div className='chats'>
       <List items={newestChats} />
-      <Conversation contact={contact!} />
+      <Outlet />
     </div>
   );
 };
 
-export default Chat;
+export default ChatsLayout;

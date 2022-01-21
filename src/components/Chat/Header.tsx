@@ -5,13 +5,14 @@ import Zoom from 'react-medium-image-zoom';
 import { HeaderProp } from '../../types/components/Chat/Conversation/header';
 
 const Header: FunctionComponent<HeaderProp> = ({ contact }) => {
+
   return (
     <header className='conversation-header'>
       <Zoom overlayBgColorEnd='#262930'>
         <img
           className='conversation-header__avatar'
-          src={contact.avatar}
-          alt={contact.name + "'s avatar"}
+          src={contact?.avatar}
+          alt={contact?.name + "'s avatar"}
         />
       </Zoom>
       <div className='conversation-header__info'>

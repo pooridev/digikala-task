@@ -4,10 +4,9 @@ import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 
 // Internal dependencies
-import List from '../components/shared/List';
-import { RootState } from '../types/state/rootState';
-import { Contact } from '../types/state/slices/contact';
-import ProfileCard from '../components/ContactInfo/ProfileCard';
+import { RootState } from '../../types/state/rootState';
+import { Contact } from '../../types/state/slices/contact';
+import ProfileCard from './ProfileCard';
 
 /**
  *
@@ -15,6 +14,7 @@ import ProfileCard from '../components/ContactInfo/ProfileCard';
  */
 const ContactInfo = () => {
   const contacts = useSelector((state: RootState) => state.contacts);
+
   // Extract the id from the url
   const { contact_id } = useParams<{ contact_id: string }>();
 
@@ -36,11 +36,8 @@ const ContactInfo = () => {
   }, [contact_id]);
 
   return (
-    <div className='contact-info'>
-      <List items={contacts} />
-      <div className='contact-info__profile-wrapper'>
-        <ProfileCard {...contact} />
-      </div>
+    <div className='contact-info__profile-wrapper'>
+      <ProfileCard {...contact} />
     </div>
   );
 };
