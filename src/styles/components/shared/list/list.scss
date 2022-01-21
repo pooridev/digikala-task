@@ -10,6 +10,8 @@
     color: $gray_50;
     cursor: pointer;
     padding: 0.7rem;
+    justify-content: unset;
+    position: relative;
 
     &:hover {
       background: $black_300;
@@ -24,6 +26,7 @@
       &--name {
         font-weight: 800;
       }
+
       &--number {
         font-size: 0.9rem;
       }
@@ -35,11 +38,13 @@
       height: 50px;
       object-fit: cover;
     }
+
     &__unread {
       background: $gray_400;
       color: $white;
-      justify-self: end;
-      align-self: flex-start;
+      position: absolute;
+      right: 1rem;
+      align-self: flex-end;
       padding: 1px 15px;
       border-radius: 1rem;
     }

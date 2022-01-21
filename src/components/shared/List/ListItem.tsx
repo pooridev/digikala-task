@@ -33,7 +33,7 @@ const ListItem: FC<ListItemProp> = ({ item }) => {
         </div>
       </div>
       {'lastMessage' in item && item.unreadCounts >= 1 && (
-        <div className='list-item__unread'>{item.unreadCounts}</div>
+        <p className='list-item__unread'>{item.unreadCounts}</p>
       )}
     </li>
   );
