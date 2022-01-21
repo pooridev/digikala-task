@@ -1,5 +1,5 @@
 // Internal dependencies
-import sidebarItems from '../../constants/sidebar-items';
+import sidebarItems from '../../../constants/sidebar-items';
 import SidebarItem from './SidebarItem';
 
 /**

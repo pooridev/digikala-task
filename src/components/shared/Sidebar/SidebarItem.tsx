@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 // Internal dependencies
-import { SideBarItemProp } from '../../types/components/Layout/sidebar';
+import { SideBarItemProp } from '../../../types/components/Layout/sidebar';
 
 /**
  *

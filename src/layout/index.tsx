@@ -3,8 +3,7 @@ import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
 // Components
-import Sidebar from '../components/Layout/Sidebar';
-import List from '../components/shared/List/List';
+import Sidebar from '../components/shared/Sidebar';
 
 /**
  *
