@@ -1,3 +1,7 @@
+/**
+ * Accept my apologies 🙏
+ * I did not get enough time to make this web app responsive.
+*/
 @mixin respond($breakpoint) {
   @if $breakpoint == sm {
     @media only screen and (min-width: 640px) {
