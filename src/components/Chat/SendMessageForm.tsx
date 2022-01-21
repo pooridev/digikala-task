@@ -5,11 +5,17 @@ import { Icon } from '@iconify/react';
 // Internal Dependencies
 import { SendMessageFormProps } from '../../types/components/Chat/Conversation/send-message-form';
 
+/**
+ *
+ * @returns a form that allows the user to send a message 📩
+ */
 const SendMessageForm: FunctionComponent<SendMessageFormProps> = ({
   onSendMessage,
   message,
   onChangeInput
 }) => {
+  // Indicates whether the send button should be disabled.
+  // (also used to update the aria-invalid attribute)
   const isValid = message.trim().length >= 1;
 
   return (
