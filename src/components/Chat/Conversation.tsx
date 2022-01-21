@@ -7,6 +7,7 @@ import SendMessageForm from './SendMessageForm';
 import { SendMessagePayload } from '../../types/state/payloads/send-message';
 import { getUID } from '../../utils/getUID';
 import { sendMessage } from '../../state/contacts/Contactsslice';
+import Messages from './Messages';
 
 /**
  *
@@ -45,6 +46,7 @@ const Conversation: FunctionComponent<ConversationProp> = ({ contact }) => {
   return (
     <section className='conversation'>
       <Header contact={contact} />
+      <Messages contact={contact} />
       <SendMessageForm
         message={message}
         onChangeInput={changeMessageInputHandler}

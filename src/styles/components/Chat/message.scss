@@ -1,0 +1,30 @@
+.message {
+  display: flex;
+  gap: 5px;
+  margin-top: 1rem;
+  align-items: flex-start;
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__text-wrapper {
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    padding: 0.8rem 1rem;
+    color: $white;
+    background: $indigo_500;
+  }
+  .message-tail {
+    position: absolute;
+    bottom: -1.02px;
+    fill: $indigo_500;
+    left: -9px;
+  }
+}
