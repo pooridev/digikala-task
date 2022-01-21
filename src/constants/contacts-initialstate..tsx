@@ -50,7 +50,7 @@ export const initialState: Contact[] = [
     messages: [
       {
         id: getUID(),
-        hasSeen: false,
+        hasSeen: true,
         text: 'Just finished my first React project!',
         timestamp: new Date('2000/11/09').getTime(),
         author: 'pooria-XtE&xfV'

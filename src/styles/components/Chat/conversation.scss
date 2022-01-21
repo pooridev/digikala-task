@@ -1,5 +1,7 @@
 .conversation {
   height: 100%;
+  max-height: 100vh;
+  overflow: hidden;
   flex: 1;
   background: $black_500;
   background-image: url('../../../assets/images/backgrounds/telegram-chat-bg.svg');
