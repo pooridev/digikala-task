@@ -27,9 +27,8 @@ export const contactsSlice = createSlice({
       state,
       action: PayloadAction<UpdateSeenMessagePayload>
     ) => {
-      debugger
+     // debugger
       const { contact_id } = action.payload;
-      const contact = state.find(contact => contact.id === contact_id);
       state = state.map(contact => {
         if (contact.id === contact_id) {
           contact.messages.forEach(message => {
