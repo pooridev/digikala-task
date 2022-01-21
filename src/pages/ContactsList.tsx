@@ -2,7 +2,7 @@
 import { useSelector } from 'react-redux';
 
 // Internal dependencies
-import List from '../components/shared/List/List';
+import List from '../components/shared/List';
 import { RootState } from '../types/state/rootState';
 
 const Contacts = () => {

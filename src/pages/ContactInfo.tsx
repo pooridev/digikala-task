@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 
 // Internal dependencies
-import List from '../components/shared/List/List';
+import List from '../components/shared/List';
 import { RootState } from '../types/state/rootState';
 import { Contact } from '../types/state/slices/contact';
 import ProfileCard from '../components/ContactInfo/ProfileCard';

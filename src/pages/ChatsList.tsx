@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import List from '../components/shared/List/List';
+import List from '../components/shared/List';
 import { RootState } from '../types/state/rootState';
 
 /**

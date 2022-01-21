@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Conversation from '../components/Chat/Conversation';
-import List from '../components/shared/List/List';
+import List from '../components/shared/List';
 import { updateSeenMessage } from '../state/contacts/Contactsslice';
 import { RootState } from '../types/state/rootState';
 
@@ -33,7 +33,7 @@ const Chat = () => {
   }));
 
   // sort chats by last message
-  const newestContactsChats = chats
+  const newestChats = chats
     .slice()
     .sort((a, b) => b.lastMessage.timestamp - a.lastMessage.timestamp);
 
@@ -46,7 +46,7 @@ const Chat = () => {
 
   return (
     <div className='chats'>
-      <List items={newestContactsChats} />
+      <List items={newestChats} />
       <Conversation contact={contact!} />
     </div>
   );
