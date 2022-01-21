@@ -6,10 +6,19 @@ import { HeaderProp } from '../../types/components/Chat/Conversation/header';
 const Header: FunctionComponent<HeaderProp> = ({ contact }) => {
   return (
     <header className='conversation-header'>
-      <h4 className='conversation-header__name'>
-        <Link to={'/contacts/' + contact?.id}>{contact?.name}</Link>
-      </h4>
-      <p className='conversation-header__lastseen'>last seen recently</p>
+      <img
+        className='conversation-header__avatar'
+        src={contact.avatar}
+        alt={contact.name + "'s avatar"}
+      />
+      <div className='conversation-header__info'>
+        <h4 className='conversation-header__info--name'>
+          <Link to={'/contacts/' + contact?.id}>{contact?.name}</Link>
+        </h4>
+        <p className='conversation-header__info--lastseen'>
+          last seen recently
+        </p>
+      </div>
     </header>
   );
 };
