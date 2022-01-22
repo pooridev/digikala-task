@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+## Digikala Task - Telegram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Screen Shot(s)
 
-## Available Scripts
+#### Home page (Chats page):
 
-In the project directory, you can run:
+<img src="https://user-images.githubusercontent.com/66781740/150645526-1b233d64-5531-4f21-ba30-0d68022d5fc9.png" />
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Chat page:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="https://user-images.githubusercontent.com/66781740/150645534-454579a3-2df9-462b-8a3e-b46e3c610a36.png" />
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Contacts page:
 
-### `npm run build`
+<img src="https://user-images.githubusercontent.com/66781740/150645535-6f032bfe-b531-4b6c-ae2a-fa6acdd00488.png" />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Contact info page:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="https://user-images.githubusercontent.com/66781740/150645537-04788563-005b-4e49-9994-90a836883cff.png" />
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Installation and Setup Instructions
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Installation:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`npm install`
 
-## Learn More
+To Start Server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To Visit App:
+
+`localhost:3000`
+
+## Extra Features:
+
+- Zoome effect on avatars
+
+## Project structure
+
+```
+.
+├── ...
+├── src
+│   ├── assets              # Contains images.
+│   ├── components          # Contains Components used in each page.
+│   ├── constants           # Contains constant data and initial redux store.
+│   ├── layouts             # Contains the main layout to render shared components around the application.
+│   └── pages                # Contains pages that we're going to render using router.
+│   └── styles               # Contains stylesheet files used in each component or page.
+│   └── types                # Contains types and interfaces.
+│   └── utils                # Holds helper and ustility functions.
+└── ...
+```
