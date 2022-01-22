@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import messageReducer from './slices/messages';
+import chatReducer from './slices/chat';
 
 export const store = configureStore({
   reducer: {
-    contacts: messageReducer
-  }
+    contacts: chatReducer
+  },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false
+    })
 });
