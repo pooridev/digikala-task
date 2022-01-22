@@ -3,6 +3,7 @@ import { Route, Routes, useRoutes } from 'react-router-dom';
 import Chat from './components/Chat';
 import ContactInfo from './components/ContactInfo/ContactInfo';
 import BackgroundImage from './components/shared/BackgroundImage';
+import NotFound from './pages/404';
 
 // Pages
 const Contacts = lazy(() => import('./pages/Contacts'));
@@ -25,6 +26,8 @@ const Router = () => {
         <Route path='/contacts' element={<BackgroundImage />} />
         <Route path='/contacts/:contact_id' element={<ContactInfo />} />
       </Route>
+
+      <Route path='*' element={<NotFound />} />
     </Routes>
   );
 };
