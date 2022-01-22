@@ -44,7 +44,7 @@ To Visit App:
 
 ## Extra Features:
 
-- Zoome effect on avatars
+- Zoom effect on avatars
 
 ## Project structure
 
