@@ -1,6 +1,6 @@
 // External dependencies
 import { FC } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { matchPath, NavLink, useLocation } from 'react-router-dom';
 
 // Internal dependencies
 import { SideBarItemProp } from '../../../types/components/shared/sidebar';
@@ -12,12 +12,11 @@ import { SideBarItemProp } from '../../../types/components/shared/sidebar';
 const SidebarItem: FC<SideBarItemProp> = ({ path, title, icon }) => {
   const { pathname } = useLocation();
 
-  // TODO: Bad pattern (better to say, DOG pattern)
+  // TODO: Bad pattern (better to say, sag pattern)
   const isActive =
     path !== '/' || pathname.includes('contacts')
       ? pathname.substring(1).replaceAll('/', ' ').includes(path)
       : pathname.substring(1).includes(path);
-  // debugger;
 
   return (
     <li className='sidebar-item'>

@@ -1,8 +1,9 @@
 export type ContactListItem = {
   name: string;
-  id: string;
+  contact_id: string;
   avatar: string;
   mobileNumber: string;
+  type: 'contact';
 };
 
 export type ChatListItem = {
@@ -13,9 +14,8 @@ export type ChatListItem = {
   unreadCounts: number;
   name: string;
   avatar: string;
-  date: string;
-  id: string;
-  mobileNumber: string;
+  contact_id: string;
+  type: 'chat';
 };
 
 export type ListProp = {

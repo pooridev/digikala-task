@@ -15,7 +15,7 @@ const List: FC<ListProp> = ({ items }) => {
   return (
     <ul className='list'>
       {items.map(item => (
-        <ListItem key={item.id} item={item} />
+        <ListItem key={item.contact_id} item={item} />
       ))}
     </ul>
   );

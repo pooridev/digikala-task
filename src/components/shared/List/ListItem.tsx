@@ -9,15 +9,15 @@ const ListItem: FC<ListItemProp> = ({ item }) => {
   const navigate = useNavigate();
 
   const goToChat = () => {
-    navigate(`/${item.id}/chats`);
+    navigate(`/${item.contact_id}/chats`);
   };
 
   const goToContactInfo = () => {
-    navigate(`/contacts/${item.id}`);
+    navigate(`/contacts/${item.contact_id}`);
   };
 
   const navigateHandler = () => {
-    if ('lastMessage' in item) goToChat();
+    if (item.type === 'chat') goToChat();
     else goToContactInfo();
   };
 
@@ -29,10 +29,10 @@ const ListItem: FC<ListItemProp> = ({ item }) => {
       <div className='list-item__details'>
         <div className='list-item__details--name'>{item.name}</div>
         <div className='list-item__details--number'>
-          {'lastMessage' in item ? item.lastMessage.message : item.mobileNumber}
+          {item.type === 'chat' ? item.lastMessage.message : item.mobileNumber}
         </div>
       </div>
-      {'lastMessage' in item && item.unreadCounts >= 1 && (
+      {item.type === 'chat' && item.unreadCounts >= 1 && (
         <p className='list-item__unread'>{item.unreadCounts}</p>
       )}
     </li>
