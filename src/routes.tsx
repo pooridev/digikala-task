@@ -1,19 +1,19 @@
 import { lazy } from 'react';
-import { Route, Routes, useRoutes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+
 import Chat from './components/Chat';
-import ContactInfo from './components/ContactInfo/ContactInfo';
+import ContactInfo from './components/ContactInfo';
 import BackgroundImage from './components/shared/BackgroundImage';
-import NotFound from './pages/404';
 
 // Pages
 const Contacts = lazy(() => import('./pages/Contacts'));
 const Chats = lazy(() => import('./pages/Chats'));
+const NotFound = lazy(() => import('./pages/404'));
 
 /**
  *
  * @returns the element of the route that matched the current location 🔍
  */
-
 const Router = () => {
   return (
     <Routes>

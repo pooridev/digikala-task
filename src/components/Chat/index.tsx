@@ -7,7 +7,7 @@ import {
   useState
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 // Internal Dependencies
 import Header from './Header';
@@ -27,6 +27,7 @@ const Chat: FunctionComponent<ChatProp> = () => {
   const [message, setMessage] = useState('');
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { contact_id } = useParams<{ contact_id: string }>();
 
@@ -37,6 +38,8 @@ const Chat: FunctionComponent<ChatProp> = () => {
     setMessage(e.target.value);
   };
 
+  const validateSendMessageForm = () => message.trim().length >= 1;
+
   const sendMessageHandler = (e: FormEvent) => {
     e.preventDefault();
 
@@ -45,8 +48,9 @@ const Chat: FunctionComponent<ChatProp> = () => {
     // Clear the timer if it's already running
     clearTimeout(timerId!);
 
-    // Validate the form before sending the message
-    if (message.trim().length === 0) return;
+    // Prevent sending an empty message
+    const isValid = validateSendMessageForm();
+    if (!isValid) return;
 
     const SEND_MESSAGE_PAYLOAD: SendMessagePayload = {
       author: 'me',
@@ -69,11 +73,12 @@ const Chat: FunctionComponent<ChatProp> = () => {
 
   const clearMessage = () => setMessage('');
 
-  // Update messages as seen when the page is loaded
   useEffect(() => {
-    if (contact_id) {
-      dispatch(updateSeenMessage({ contact_id }));
-    }
+    // If the contact is not found, navigate to the chats
+    if (!contact) return navigate('/');
+
+    // Update messages as seen when the page is loaded
+    if (contact_id) dispatch(updateSeenMessage({ contact_id }));
   }, [contact_id]);
 
   return (
