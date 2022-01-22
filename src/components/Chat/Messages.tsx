@@ -2,7 +2,7 @@
 import { FunctionComponent } from 'react';
 
 // Internal Dependencies
-import { MessagesProp } from '../../types/components/Chat/Conversation/messages';
+import { MessagesProp } from '../../types/components/Chat/messages';
 import Message from './Message';
 
 /**

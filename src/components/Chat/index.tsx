@@ -11,7 +11,7 @@ import { useParams } from 'react-router-dom';
 
 // Internal Dependencies
 import Header from './Header';
-import { ConversationProp } from '../../types/components/Chat/Conversation/conversation';
+import { ChatProp } from '../../types/components/Chat/chat';
 import SendMessageForm from './SendMessageForm';
 import { SendMessagePayload } from '../../types/state/payloads/send-message';
 import { getUID } from '../../utils/getUID';
@@ -23,7 +23,7 @@ import { RootState } from '../../types/state/rootState';
  *
  * @returns a section that allows the user to send a message 📩
  */
-const Chat: FunctionComponent<ConversationProp> = () => {
+const Chat: FunctionComponent<ChatProp> = () => {
   const [message, setMessage] = useState('');
 
   const dispatch = useDispatch();
@@ -65,7 +65,7 @@ const Chat: FunctionComponent<ConversationProp> = () => {
   }, [contact_id]);
 
   return (
-    <section className='conversation'>
+    <section className='chat'>
       <Header contact={contact!} />
       <Messages contact={contact!} />
       <SendMessageForm

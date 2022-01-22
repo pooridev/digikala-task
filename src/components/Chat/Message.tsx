@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 import Zoom from 'react-medium-image-zoom';
 
 // Internal Dependencies
-import { Message as MessageType } from '../../types/components/Chat/Conversation/message';
+import { Message as MessageType } from '../../types/components/Chat/message';
 import MessageTail from './MessageTail';
 import unknownAvatar from '../../assets/images/avatars/react.jpg';
 

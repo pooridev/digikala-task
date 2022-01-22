@@ -3,7 +3,7 @@ import { FormEvent, FunctionComponent, useState } from 'react';
 import { Icon } from '@iconify/react';
 
 // Internal Dependencies
-import { SendMessageFormProps } from '../../types/components/Chat/Conversation/send-message-form';
+import { SendMessageFormProps } from '../../types/components/Chat/send-message-form';
 
 /**
  *

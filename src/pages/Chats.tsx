@@ -23,7 +23,6 @@ const ChatsLayout = () => {
     unreadCounts: contact.messages.filter(
       message => !message.hasSeen && message.author !== 'me'
     ).length,
-    type: 'chat',
     ...contact
   }));
 

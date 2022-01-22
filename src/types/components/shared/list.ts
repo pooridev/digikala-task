@@ -16,7 +16,6 @@ export type ChatListItem = {
   date: string;
   id: string;
   mobileNumber: string;
-  type: 'chat' | 'contact';
 };
 
 export type ListProp = {
