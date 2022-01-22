@@ -1,6 +1,5 @@
 // External dependencies
 import { FC } from 'react';
-import { Outlet } from 'react-router-dom';
 
 // Components
 import Sidebar from '../components/shared/Sidebar';

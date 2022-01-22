@@ -15,7 +15,7 @@ import { ConversationProp } from '../../types/components/Chat/Conversation/conve
 import SendMessageForm from './SendMessageForm';
 import { SendMessagePayload } from '../../types/state/payloads/send-message';
 import { getUID } from '../../utils/getUID';
-import { sendMessage, updateSeenMessage } from '../../state/slices/messages';
+import { sendMessage, updateSeenMessage } from '../../state/slices/chat';
 import Messages from './Messages';
 import { RootState } from '../../types/state/rootState';
 
@@ -23,7 +23,7 @@ import { RootState } from '../../types/state/rootState';
  *
  * @returns a section that allows the user to send a message 📩
  */
-const Conversation: FunctionComponent<ConversationProp> = () => {
+const Chat: FunctionComponent<ConversationProp> = () => {
   const [message, setMessage] = useState('');
 
   const dispatch = useDispatch();
@@ -77,4 +77,4 @@ const Conversation: FunctionComponent<ConversationProp> = () => {
   );
 };
 
-export default Conversation;
+export default Chat;

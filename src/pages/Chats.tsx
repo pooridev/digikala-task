@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Outlet, Route, Routes, useParams } from 'react-router-dom';
-import Conversation from '../components/Chat/Conversation';
+import Chat from '../components/Chat';
 import List from '../components/shared/List';
 import { RootState } from '../types/state/rootState';
 
@@ -11,7 +11,7 @@ import { RootState } from '../types/state/rootState';
 const ChatsLayout = () => {
   const contacts = useSelector((state: RootState) => state.contacts);
 
-  const chatsWithTimestamps = contacts.map(contact => ({
+  const chatsWithTimestamps = contacts?.map(contact => ({
     lastMessage: {
       message: contact.messages
         .slice()

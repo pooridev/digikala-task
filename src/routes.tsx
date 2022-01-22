@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes, useRoutes } from 'react-router-dom';
-import Conversation from './components/Chat/Conversation';
+import Chat from './components/Chat';
 import ContactInfo from './components/ContactInfo/ContactInfo';
 import BackgroundImage from './components/shared/BackgroundImage';
 
@@ -17,7 +17,7 @@ const Router = () => {
   return (
     <Routes>
       <Route path='/' element={<Chats />}>
-        <Route path='/:contact_id/chats' element={<Conversation />} />
+        <Route path='/:contact_id/chats' element={<Chat />} />
         <Route path='/' element={<BackgroundImage />} />
       </Route>
 
