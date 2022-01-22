@@ -40,6 +40,12 @@ const Chat: FunctionComponent<ChatProp> = () => {
   const sendMessageHandler = (e: FormEvent) => {
     e.preventDefault();
 
+    let timerId: NodeJS.Timeout;
+
+    // Clear the timer if it's already running
+    clearTimeout(timerId!);
+
+    // Validate the form before sending the message
     if (message.trim().length === 0) return;
 
     const SEND_MESSAGE_PAYLOAD: SendMessagePayload = {
@@ -51,7 +57,13 @@ const Chat: FunctionComponent<ChatProp> = () => {
       id: getUID()
     };
 
-    dispatch(sendMessage(SEND_MESSAGE_PAYLOAD));
+    // Send the message after 2 seconds
+    timerId = setTimeout(
+      () => dispatch(sendMessage(SEND_MESSAGE_PAYLOAD)),
+      2000
+    );
+
+    // Clear the input field after sending the message
     clearMessage();
   };
 
